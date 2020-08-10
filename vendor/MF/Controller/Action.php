@@ -13,8 +13,8 @@ abstract class Action {
 	protected function render($view, $layout = 'layout') {
 		$this->view->page = $view;
 
-		if(file_exists("../twitter_clone/App/Views/".$layout.".phtml")) {
-			require_once "../twitter_clone/App/Views/".$layout.".phtml";
+		if(file_exists("/App/Views/".$layout.".phtml")) {
+			require_once "/App/Views/".$layout.".phtml";
 		} else {
 			$this->content();
 		}
@@ -27,7 +27,7 @@ abstract class Action {
 
 		$classAtual = strtolower(str_replace('Controller', '', $classAtual));
 
-		require_once "../twitter_clone/App/Views/".$classAtual."/".$this->view->page.".phtml";
+		require_once "/App/Views/".$classAtual."/".$this->view->page.".phtml";
 	}
 }
 
